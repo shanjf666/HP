@@ -1,11 +1,8 @@
 """
-Bulk‑YAML generator
-用法示例：
 python /root/autodl-tmp/HP/yamlgenerate.py \
   --experiment_path /root/autodl-tmp/data/output/helpsteer2/experiments.txt \
   --output_path /root/autodl-tmp/HP/train
 """
-# ──────────────────────────────────────────────────────────────────────
 import argparse
 import logging
 import os
@@ -18,7 +15,6 @@ logging.basicConfig(
     level=logging.INFO,
 )
 
-# ★ 写死要抽取的数量
 SAMPLE_SIZE = 20
 
 TEMPLATE = """\

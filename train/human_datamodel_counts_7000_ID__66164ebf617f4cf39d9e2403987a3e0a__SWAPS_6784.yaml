@@ -12,7 +12,7 @@ pref_beta: 0.1
 pref_loss: simpo  # choices: [sigmoid (dpo), orpo, simpo]
 
 ### dataset
-dataset: human_datamodel_counts_7000_ID__496125b2992c4b63a24b31597e861e65__SWAPS_8565
+dataset: human_datamodel_counts_7000_ID__66164ebf617f4cf39d9e2403987a3e0a__SWAPS_6784
 template: tulu2
 cutoff_len: 2048
 max_samples: 1000
@@ -21,7 +21,7 @@ preprocessing_num_workers: 16
 dataloader_num_workers: 4
 
 ### output
-output_dir: /root/autodl-tmp/HP/data/human_datamodel_counts_7000_ID__496125b2992c4b63a24b31597e861e65__SWAPS_8565
+output_dir: /root/autodl-tmp/HP/data/human_datamodel_counts_7000_ID__66164ebf617f4cf39d9e2403987a3e0a__SWAPS_6784
 logging_steps: 50
 save_steps: 1000
 plot_loss: true
