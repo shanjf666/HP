@@ -1,0 +1,90 @@
+{"feat":"bertscore::min_val=0.0|max_val=0.33","coef":6.827085555e-19}
+{"feat":"bertscore::min_val=0.33|max_val=0.67","coef":-0.0000374856}
+{"feat":"bertscore::min_val=0.67|max_val=1.0","coef":0.0000225268}
+{"feat":"bertscore_length::min_val=0.0|max_val=0.33","coef":-0.0001916903}
+{"feat":"bertscore_length::min_val=0.33|max_val=0.67","coef":0.0001662207}
+{"feat":"bertscore_length::min_val=0.67|max_val=1.0","coef":0.0000073636}
+{"feat":"cosine_sim::min_val=0.0|max_val=0.33","coef":-0.0000073003}
+{"feat":"cosine_sim::min_val=0.33|max_val=0.67","coef":-0.0000241739}
+{"feat":"cosine_sim::min_val=0.67|max_val=1.0","coef":0.0000214109}
+{"feat":"entity_sim::min_val=0.0|max_val=0.33","coef":0.0000843107}
+{"feat":"entity_sim::min_val=0.33|max_val=0.67","coef":-0.0001143148}
+{"feat":"entity_sim::min_val=0.67|max_val=1.0","coef":0.0000150453}
+{"feat":"len_longer::min_val=0.0|max_val=0.33","coef":-0.0000006405}
+{"feat":"len_longer::min_val=0.33|max_val=0.67","coef":-0.0000036321}
+{"feat":"len_longer::min_val=0.67|max_val=1.0","coef":-0.0000106862}
+{"feat":"len_shorter::min_val=0.0|max_val=0.33","coef":0.0000125981}
+{"feat":"len_shorter::min_val=0.33|max_val=0.67","coef":-0.0000290125}
+{"feat":"len_shorter::min_val=0.67|max_val=1.0","coef":0.0000014556}
+{"feat":"prompt_len::min_val=0.0|max_val=0.33","coef":-0.0000123972}
+{"feat":"prompt_len::min_val=0.33|max_val=0.67","coef":0.0000013235}
+{"feat":"prompt_len::min_val=0.67|max_val=1.0","coef":-0.0000038851}
+{"feat":"rouge::min_val=0.0|max_val=0.33","coef":0.0001137555}
+{"feat":"rouge::min_val=0.33|max_val=0.67","coef":-0.0002223789}
+{"feat":"rouge::min_val=0.67|max_val=1.0","coef":0.0000930307}
+{"feat":"token_len_diff::min_val=0.0|max_val=0.33","coef":0.000017898}
+{"feat":"token_len_diff::min_val=0.33|max_val=0.67","coef":-0.000023222}
+{"feat":"token_len_diff::min_val=0.67|max_val=1.0","coef":-0.0000060615}
+{"feat":"analyzer_closed_set::feature_name=subject_of_expertise|constraints=Anthropology","coef":0.000002914}
+{"feat":"analyzer_closed_set::feature_name=subject_of_expertise|constraints=History","coef":0.0000057392}
+{"feat":"analyzer_closed_set::feature_name=subject_of_expertise|constraints=Linguistics and language","coef":-0.0000006851}
+{"feat":"analyzer_closed_set::feature_name=subject_of_expertise|constraints=Philosophy","coef":0.0000578988}
+{"feat":"analyzer_closed_set::feature_name=subject_of_expertise|constraints=Religion","coef":0.0000173466}
+{"feat":"analyzer_closed_set::feature_name=subject_of_expertise|constraints=Economics","coef":-0.0000223427}
+{"feat":"analyzer_closed_set::feature_name=subject_of_expertise|constraints=Geography","coef":0.0000364893}
+{"feat":"analyzer_closed_set::feature_name=subject_of_expertise|constraints=Political science","coef":-0.0000276147}
+{"feat":"analyzer_closed_set::feature_name=subject_of_expertise|constraints=Psychology","coef":0.0000611334}
+{"feat":"analyzer_closed_set::feature_name=subject_of_expertise|constraints=Sociology","coef":-0.0000083382}
+{"feat":"analyzer_closed_set::feature_name=subject_of_expertise|constraints=Biology","coef":-0.0000110982}
+{"feat":"analyzer_closed_set::feature_name=subject_of_expertise|constraints=Chemistry","coef":0.0000022426}
+{"feat":"analyzer_closed_set::feature_name=subject_of_expertise|constraints=Earth sciences","coef":-0.0000020116}
+{"feat":"analyzer_closed_set::feature_name=subject_of_expertise|constraints=Physics","coef":-0.0000038569}
+{"feat":"analyzer_closed_set::feature_name=subject_of_expertise|constraints=Space sciences","coef":0.0000098191}
+{"feat":"analyzer_closed_set::feature_name=subject_of_expertise|constraints=Computer sciences","coef":0.0000446228}
+{"feat":"analyzer_closed_set::feature_name=subject_of_expertise|constraints=Logic","coef":0.0000178089}
+{"feat":"analyzer_closed_set::feature_name=subject_of_expertise|constraints=System science","coef":-0.0000018254}
+{"feat":"analyzer_closed_set::feature_name=subject_of_expertise|constraints=Agriculture","coef":-0.0000057433}
+{"feat":"analyzer_closed_set::feature_name=subject_of_expertise|constraints=Architecture and design","coef":-0.0000316704}
+{"feat":"analyzer_closed_set::feature_name=subject_of_expertise|constraints=Business","coef":-0.0001839387}
+{"feat":"analyzer_closed_set::feature_name=subject_of_expertise|constraints=Divinity","coef":0.0}
+{"feat":"analyzer_closed_set::feature_name=subject_of_expertise|constraints=Education","coef":0.0001073883}
+{"feat":"analyzer_closed_set::feature_name=subject_of_expertise|constraints=Chemical engineering","coef":-0.0000040213}
+{"feat":"analyzer_closed_set::feature_name=subject_of_expertise|constraints=Civil engineering","coef":0.0000006338}
+{"feat":"analyzer_closed_set::feature_name=subject_of_expertise|constraints=Electrical engineering","coef":-0.000001236}
+{"feat":"analyzer_closed_set::feature_name=subject_of_expertise|constraints=Materials science and engineering","coef":-0.0000077975}
+{"feat":"analyzer_closed_set::feature_name=subject_of_expertise|constraints=Mechanical engineering","coef":0.0000065963}
+{"feat":"analyzer_closed_set::feature_name=subject_of_expertise|constraints=Environmental studies and forestry","coef":-0.0000152778}
+{"feat":"analyzer_closed_set::feature_name=subject_of_expertise|constraints=Family and consumer science","coef":-0.0000088953}
+{"feat":"analyzer_closed_set::feature_name=subject_of_expertise|constraints=Human physical performance and recreation","coef":0.0000221229}
+{"feat":"analyzer_closed_set::feature_name=subject_of_expertise|constraints=Journalism","coef":-0.0000130921}
+{"feat":"analyzer_closed_set::feature_name=subject_of_expertise|constraints=Media studies and communication","coef":-0.0000003835}
+{"feat":"analyzer_closed_set::feature_name=subject_of_expertise|constraints=Law","coef":-0.0000317526}
+{"feat":"analyzer_closed_set::feature_name=subject_of_expertise|constraints=Library and museum studies","coef":0.0000007437}
+{"feat":"analyzer_closed_set::feature_name=subject_of_expertise|constraints=Medicine and health","coef":0.0001075614}
+{"feat":"analyzer_closed_set::feature_name=subject_of_expertise|constraints=Military sciences","coef":-0.0000095328}
+{"feat":"analyzer_closed_set::feature_name=subject_of_expertise|constraints=Social work","coef":-0.0000019298}
+{"feat":"analyzer_closed_set::feature_name=subject_of_expertise|constraints=Transportation","coef":0.0000293302}
+{"feat":"analyzer_closed_set::feature_name=subject_of_expertise|constraints=Culinary arts","coef":-0.0000068976}
+{"feat":"analyzer_closed_set::feature_name=subject_of_expertise|constraints=Literature","coef":-0.0000030764}
+{"feat":"analyzer_closed_set::feature_name=subject_of_expertise|constraints=Performing arts","coef":0.0000294532}
+{"feat":"analyzer_closed_set::feature_name=subject_of_expertise|constraints=Visual arts","coef":0.0000183267}
+{"feat":"analyzer_closed_set::feature_name=subject_of_expertise|constraints=Mathematics","coef":-0.0001018073}
+{"feat":"analyzer_closed_set::feature_name=subject_of_expertise|constraints=Public administration","coef":-0.0000078747}
+{"feat":"analyzer_closed_set::feature_name=subject_of_expertise|constraints=Others","coef":0.0000299712}
+{"feat":"analyzer_closed_set::feature_name=languages|constraints=English","coef":-0.0000232414}
+{"feat":"analyzer_scalar::feature_name=expertise_level|value=general public","coef":-0.0000271485}
+{"feat":"analyzer_scalar::feature_name=expertise_level|value=basic domain knowledge","coef":0.0000119377}
+{"feat":"analyzer_scalar::feature_name=expertise_level|value=expert domain knowledge","coef":-0.0000006475}
+{"feat":"analyzer_scalar::feature_name=open_endedness|value=no","coef":-0.0001784028}
+{"feat":"analyzer_scalar::feature_name=open_endedness|value=low","coef":0.0000210426}
+{"feat":"analyzer_scalar::feature_name=open_endedness|value=moderate","coef":0.0000579426}
+{"feat":"analyzer_scalar::feature_name=open_endedness|value=high","coef":0.0000797335}
+{"feat":"analyzer_scalar::feature_name=safety_concern|value=safe","coef":0.0000984862}
+{"feat":"analyzer_scalar::feature_name=safety_concern|value=low","coef":-0.0000832928}
+{"feat":"analyzer_scalar::feature_name=safety_concern|value=moderate","coef":-0.0000255494}
+{"feat":"analyzer_scalar::feature_name=safety_concern|value=high","coef":-0.0000046028}
+{"feat":"analyzer_scalar::feature_name=complexity_of_intents|value=simple","coef":0.0000044174}
+{"feat":"analyzer_scalar::feature_name=complexity_of_intents|value=moderate","coef":-0.0000558586}
+{"feat":"analyzer_scalar::feature_name=complexity_of_intents|value=complex","coef":0.0000346879}
+{"feat":"analyzer_open_set::feature_name=type_of_in_context_material|check_for_existence=1","coef":0.0000227185}
+{"feat":"analyzer_open_set::feature_name=format_constraints|check_for_existence=1","coef":0.0000244559}
