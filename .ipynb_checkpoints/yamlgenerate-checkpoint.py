@@ -8,7 +8,7 @@ import logging
 import os
 import sys
 from pathlib import Path
-import random           
+import random
 logging.basicConfig(
     format="%(asctime)s - %(levelname)s - %(message)s",
     datefmt="%Y-%m-%d %H:%M:%S",
@@ -16,6 +16,7 @@ logging.basicConfig(
 )
 
 SAMPLE_SIZE = 20
+NUM_SEEDS = 3  # 为每个实验生成3个不同的随机种子
 
 TEMPLATE = """\
 ### model
@@ -41,7 +42,8 @@ preprocessing_num_workers: 16
 dataloader_num_workers: 4
 
 ### output
-output_dir: /root/autodl-tmp/HP/data/{dataset_name}
+seed: {seed}
+output_dir: /root/autodl-tmp/HP/data/{seed}/{dataset_name}
 logging_steps: 50
 save_steps: 1000
 plot_loss: true
@@ -79,11 +81,13 @@ def get_args():
                    help="*.yaml 的保存目录")
     p.add_argument("--sort_by_swaps", action="store_true",
                    help="若文件名包含 SWAPS_123，则按数字降序排序")
+    p.add_argument("--seed", type=int, default=42, help="随机实验的随机种子")
     return p.parse_args()
 
 
 def main() -> None:
     args = get_args()
+    random.seed(args.seed)  # 设置全局随机种子
 
     # 1. 读取 &（可选）排序
     names = [line.strip() for line in args.experiment_path.read_text().splitlines() if line.strip()]
@@ -92,31 +96,52 @@ def main() -> None:
 
     # 2. 随机抽 SAMPLE_SIZE 条
     if len(names) > SAMPLE_SIZE:
-        random.seed()                 # 如需可复现改成固定种子
         names = random.sample(names, SAMPLE_SIZE)
         logging.info("已随机抽取 %d/%d 个实验名。", SAMPLE_SIZE, len(names))
 
     # 3. 创建输出目录
     args.output_path.mkdir(parents=True, exist_ok=True)
 
-    picked = []                        # 用于记录抽中的数据集名
+    global_picked = []  # 用于全局记录所有实验
+    seed_experiments = {}  # 记录每个种子对应的实验
 
+    # 为每个实验生成NUM_SEEDS个不同的随机种子
+    seeds = random.sample(range(1, 9999), NUM_SEEDS)  # 生成不重复的随机种子
+    
     # 4. 生成 YAML
     for name in names:
-        exp_name = name.split("::")[0]     # 去掉可能的 ::comment
-        picked.append(exp_name)
+        exp_name = name.split("::")[0]  # 去掉可能的 ::comment
+        
+        for seed in seeds:
+            # 初始化该种子的实验列表（如果尚未存在）
+            if seed not in seed_experiments:
+                seed_experiments[seed] = []
+            
+            seed_experiments[seed].append(exp_name)
+            global_picked.append(f"{seed}/{exp_name}")
+            
+            # 创建种子目录
+            seed_dir = args.output_path / str(seed)
+            seed_dir.mkdir(parents=True, exist_ok=True)
+            
+            yaml_text = TEMPLATE.format(dataset_name=exp_name, seed=seed)
+            yaml_file = seed_dir / f"{exp_name}.yaml"
+            yaml_file.write_text(yaml_text, encoding="utf-8")
+            logging.info("✅ 生成 %s", yaml_file)
 
-        yaml_text = TEMPLATE.format(dataset_name=exp_name)
-        yaml_file = args.output_path / f"{exp_name}.yaml"
-        yaml_file.write_text(yaml_text, encoding="utf-8")
-        logging.info("✅ 生成 %s", yaml_file)
+    # 5. 为每个种子创建wait_experiments.txt
+    for seed, experiments in seed_experiments.items():
+        seed_dir = args.output_path / str(seed)
+        picked_file = seed_dir / "wait_experiments.txt"
+        picked_file.write_text("\n".join(experiments) + "\n", encoding="utf-8")
+        logging.info("📄 为种子 %d 创建实验列表: %s", seed, picked_file)
 
-    # 5. 把抽样结果写到 experiment.txt
-    picked_file = args.output_path / "wait_experiments.txt"
-    picked_file.write_text("\n".join(picked) + "\n", encoding="utf-8")
-    logging.info("📄 已保存选定实验名至 %s", picked_file)
-
-    logging.info("全部完成，共生成 %d 个 YAML。", len(picked))
+    # 6. 创建全局的wait_experiments.txt
+    global_picked_file = args.output_path / "wait_experiments.txt"
+    global_picked_file.write_text("\n".join(global_picked) + "\n", encoding="utf-8")
+    logging.info("📄 创建全局实验列表: %s", global_picked_file)
+    
+    logging.info("全部完成，共生成 %d 个 YAML。", len(global_picked))
 
 if __name__ == "__main__":
     main()
