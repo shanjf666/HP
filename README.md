@@ -54,9 +54,21 @@ python /root/autodl-tmp/HP/run.py --train-dir /root/autodl-tmp/HP/train/9864
 > ```
 >
 
-## 6. 评估
+## 6.合并lora模型：
+将训练好的结果lora层和原来的base模型进行合并，生成相应的微调模型RM
+```bash
+CUDA_VISIBLE_DEVICES=0 llamafactory-cli export /root/HP/LLaMA-Factory/examples/train_lora/llama3_lora_megre.yaml
+```
+
+## 7. 评估
 
 训练完成后可按项目内评估脚本进行效果评估，结果默认保存在 `HP/eval_results/` 目录。
+```bash
+rewardbench \
+ --model= cfg_path \
+ --output_dir output_dir \
+ --save_name save_name
+```
 
 ## 7. 生成回归训练集 (`overall_scores.csv`)
 
