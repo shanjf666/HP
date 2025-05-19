@@ -99,7 +99,17 @@ python scripts/train_regressor.py \
 ```
 
 ---
-
+## 9.对原的数据集进行采样，且通过PPM来选出最优的数据集
+```bash
+python3 -m scripts.sample_best_subset \
+    --input_path /root/autodl-tmp/data/multipref/features/helpsteer2-features.jsonl \
+    --output_dir /root/autodl-tmp/data/directory_q/ \
+    --model_path /root/autodl-tmp/data/HP/regressor/quadratic/model.pkl \
+    --budget 0.25 0.50 0.75 \
+    --sampling_method simulated \
+    --response_a_col "response_a" \
+    --response_b_col "response_b"
+```
 ### 附注
 
 * 所有脚本中的路径均已硬编码；若目录结构不同，请相应修改脚本。
